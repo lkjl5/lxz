@@ -1,0 +1,271 @@
+/* ============================================================
+   个人名片卡片 - CSS 样式表
+   文件：lop.css
+   说明：
+     • HTML 结构与样式分离，此文件专门负责视觉与交互
+     • 卡片布局：居中卡片式
+     • 头像：圆形
+     • 卡片：12px 圆角 + 柔和阴影
+     • 交互：鼠标悬停时卡片“轻微上浮”过渡动画
+   ============================================================ */
+
+/* ---------- 页面级重置与全局设置 ---------- */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* 字体：以系统中文字体为主，保证中文显示自然 */
+    font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans SC",
+                 "Segoe UI", "Hiragino Sans GB", sans-serif;
+
+    /* 背景色：柔和浅灰白，让卡片更突出 */
+    background-color: #f5f7fb;
+
+    /* 文字颜色：深灰，减少纯黑带来的生硬感 */
+    color: #2b3a55;
+
+    /* 让整个页面至少占满视口，并使用 Flex 布局居中卡片 */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* 给卡片周围留出呼吸空间 */
+    padding: 32px 16px;
+}
+
+/* ---------- 个人名片卡片（核心容器） ---------- */
+
+.card {
+    /* 卡片尺寸：自适应内容，最大宽度控制在 440px 左右 */
+    width: 100%;
+    max-width: 440px;
+
+    /* 内边距：卡片内部留白，使内容不贴边 */
+    padding: 36px 32px 32px;
+
+    /* 圆角：题目要求的 12px */
+    border-radius: 12px;
+
+    /* 柔和阴影：
+       - 第一层：扩散较大、透明度低，营造“浮于背景”的柔和感
+       - 第二层：更贴近元素、透明度更低，增加精细立体感 */
+    box-shadow: 0 10px 28px rgba(27, 42, 70, 0.08),
+                0 3px 8px rgba(27, 42, 70, 0.05);
+
+    /* 卡片背景为纯白，保持简约风格 */
+    background-color: #ffffff;
+
+    /* 过渡动画：
+       当鼠标悬停时，希望卡片“轻微上浮”，所以这里同时 transition
+       - transform：控制位置偏移
+       - box-shadow：控制阴影变化，增强悬停时的层次感
+       时长约 0.3 秒左右，保持轻盈柔和 */
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+/* 鼠标悬停时卡片轻微上浮的效果 */
+.card:hover {
+    /* 上移 6px：不宜过大，保持“轻微” */
+    transform: translateY(-6px);
+
+    /* 悬停时稍微加深阴影，突出“离开背景”的感觉 */
+    box-shadow: 0 18px 40px rgba(27, 42, 70, 0.12),
+                0 6px 14px rgba(27, 42, 70, 0.07);
+}
+
+/* ---------- 圆形头像 ---------- */
+
+.card__avatar {
+    /* 尺寸：与卡片宽度协调的头像直径 */
+    width: 120px;
+    height: 120px;
+
+    /* 圆角 50% 实现圆形效果 */
+    border-radius: 50%;
+
+    /* 保证图片填满圆形区域，且不扭曲 */
+    object-fit: cover;
+
+    /* 居中显示在卡片顶部 */
+    display: block;
+    margin: 0 auto 22px;
+
+    /* 白色细边框，让圆形头像边界更干净 */
+    border: 3px solid #ffffff;
+
+    /* 头像也带一点柔和阴影，增加一点点层次 */
+    box-shadow: 0 6px 14px rgba(27, 42, 70, 0.10);
+
+    /* 图片加载或悬停时也做一点点过渡，保持风格统一 */
+    transition: transform 0.3s ease;
+}
+
+/* 可选：鼠标悬停在卡片上时，头像也轻微放大一点，更生动 */
+.card:hover .card__avatar {
+    transform: scale(1.03);
+}
+
+/* ---------- 姓名 ---------- */
+
+.card__name {
+    /* 文字居中对齐 */
+    text-align: center;
+
+    /* 字号与粗细：作为卡片主标题，视觉优先级最高 */
+    font-size: 26px;
+    font-weight: 700;
+    color: #1f2a3a;
+
+    /* 与上下元素保持适当距离 */
+    margin-bottom: 6px;
+
+    /* 防止姓名过长时换行突兀（如有需要可打开） */
+    /* white-space: nowrap; */
+    /* overflow: hidden; */
+    /* text-overflow: ellipsis; */
+}
+
+/* ---------- 职位 / 身份 ---------- */
+
+.card__title {
+    text-align: center;
+
+    /* 字号小于姓名，形成视觉层级 */
+    font-size: 15px;
+    font-weight: 500;
+    color: #6f7d94;
+
+    /* 下方留出空间，并通过细线增加分隔感 */
+    margin-bottom: 24px;
+    padding-bottom: 14px;
+
+    /* 一条柔和的分割线，把姓名/职位和联系方式区分开 */
+    border-bottom: 1px solid rgba(111, 125, 148, 0.18);
+}
+
+/* ---------- 联系方式列表 ---------- */
+
+.card__contact {
+    /* 移除默认列表样式 */
+    list-style: none;
+
+    /* 垂直排布联系方式，每项之间保持一致间距 */
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.card__contact-item {
+    /* 每一项采用Flex布局，方便后续扩展图标与文字对齐，
+       当前以“标签 + 值”的文字形式呈现 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    font-size: 15px;
+    color: #2f3d57;
+
+    /* 每项之间用细线分隔，最后一项除外 */
+    border-bottom: 1px solid rgba(111, 125, 148, 0.12);
+    padding-bottom: 11px;
+}
+
+/* 最后一条联系方式不显示分隔线，保持卡片下沿干净 */
+.card__contact-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+/* 联系方式前面的“标签”（如邮箱、电话） */
+.card__contact-label {
+    /* 固定宽度，让对齐更整齐 */
+    flex: 0 0 auto;
+    width: 56px;
+    text-align: right;
+
+    color: #8a97ab;
+    font-weight: 500;
+}
+
+/* 联系方式对应的实际内容值 */
+.card__contact-value {
+    color: #2f3d57;
+    word-break: break-all;
+}
+
+/* ---------- 卡片底部备注文字（可选） ---------- */
+
+.card__note {
+    margin-top: 22px;
+    text-align: center;
+
+    font-size: 13px;
+    color: #909daa;
+
+    /* 轻微透明度，让辅助文字更柔和 */
+    opacity: 0.9;
+}
+
+/* ---------- 响应式微调（可选） ---------- */
+
+/* 在小屏幕上适当缩减上下空白与字号，避免卡片过大 */
+@media (max-width: 480px) {
+    body {
+        padding: 20px 12px;
+    }
+
+    .card {
+        padding: 30px 22px 26px;
+    }
+
+    .card__avatar {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 18px;
+    }
+
+    .card__name {
+        font-size: 22px;
+    }
+
+    .card__title {
+        font-size: 14px;
+        padding-bottom: 10px;
+        margin-bottom: 18px;
+    }
+
+    .card__contact-item {
+        font-size: 14px;
+    }
+}
+
+/* ---------- 打印样式（可选） ---------- */
+
+/* 打印时不使用阴影与悬停浮起效果，更适合纸质呈现 */
+@media print {
+    body {
+        background-color: #ffffff;
+        padding: 0;
+        align-items: flex-start;
+    }
+
+    .card {
+        box-shadow: none;
+        border: 1px solid #d5dce6;
+        max-width: 100%;
+    }
+
+    .card:hover {
+        transform: none;
+        box-shadow: none;
+    }
+}

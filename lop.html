@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人名片卡片 - 示例</title>
+    <!-- CSS 样式已分离至外部文件 lop.css，保持 HTML 结构与 CSS 样式分开书写 -->
+    <link rel="stylesheet" href="lop.css">
+</head>
+<body>
+    <!-- ==========================================
+         个人名片主容器（卡片）
+         整张卡片的内容均为可替换锚点：
+         姓名、职位、联系方式、头像均可直接修改
+         ========================================== -->
+    <section class="card" aria-label="个人名片卡片">
+
+        <!-- =============================
+             圆形头像（建议使用正方形图片）
+             将 src 替换为你的真实头像地址
+             ============================= -->
+        <img
+            class="card__avatar"
+            src="https://placehold.co/240/eeeeee/9aa5b1?text=%E5%A4%B4%E5%83%8F"
+            alt="个人头像占位图"
+            width="240"
+            height="240"
+        />
+
+        <!-- =============================
+             姓名
+             替换为你的真实姓名或昵称
+             ============================= -->
+        <h2 class="card__name">你的名字</h2>
+
+        <!-- =============================
+             职位 / 身份
+             替换为你的职位、身份或标签
+             ============================= -->
+        <p class="card__title">设计师 · 创作者</p>
+
+        <!-- =============================
+             联系方式列表
+             根据需要增删每一项联系渠道
+             ============================= -->
+        <ul class="card__contact">
+
+            <!-- 电子邮箱 -->
+            <li class="card__contact-item">
+                <span class="card__contact-label">邮箱</span>
+                <span class="card__contact-value">example@email.com</span>
+            </li>
+
+            <!-- 电话（如公开） -->
+            <li class="card__contact-item">
+                <span class="card__contact-label">电话</span>
+                <span class="card__contact-value">+86 123 4567 8901</span>
+            </li>
+
+            <!-- 所在地 / 地址 -->
+            <li class="card__contact-item">
+                <span class="card__contact-label">地址</span>
+                <span class="card__contact-value">中国 · 北京</span>
+            </li>
+
+            <!-- 网站 / 作品集链接 -->
+            <li class="card__contact-item">
+                <span class="card__contact-label">网站</span>
+                <span class="card__contact-value">example.com</span>
+            </li>
+
+        </ul>
+
+        <!-- =============================
+             备注 / 额外信息（可选）
+             替换为你的一句话介绍或其它辅助文字
+             ============================= -->
+        <p class="card__note">连接 · 合作 · 分享</p>
+
+    </section>
+</body>
+</html>
+
