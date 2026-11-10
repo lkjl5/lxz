@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>京东商品导购</title>
+    <style>
+        body {
+            background-color: #f8f8f8;
+            margin: 50px 0;
+        }
+        .guide-area {
+            width: 740px;
+            /* 修复1：去掉固定高度 620px，让盒子根据内容自动撑开，否则放两行会溢出 */
+            min-height: 620px; 
+            border-radius: 15px;
+            margin: 0 auto;
+            background-color: #fff;
+            box-sizing: border-box;
+            padding: 40px 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+        }
+        .guide-title {
+            text-align: center;
+            color: #e4393c;
+            font-size: 38px;
+            font-weight: bold;
+            margin-bottom: 60px;
+            letter-spacing: 2px;
+        }
+        
+        /* 修复2：将 flex 布局改为 Grid 网格布局 */
+        .product-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 划分为 3 等份的列 */
+            gap: 40px 10px; /* 行间距 40px，列间距 10px */
+            justify-items: center; /* 让每个商品在格子里水平居中 */
+        }
+
+        .product-item {
+            width: 180px;
+            text-align: center;
+            border: 10px groove #9966cc;
+            box-shadow: 0 0 10px #ccc;
+            background-color: #fff;
+            padding-bottom: 10px;
+            transition: border 0.3s;
+        }
+        .product-item:hover {
+            border: 10px dashed #9999cc;
+        }
+        .product-item h3 {
+            font-size: 16px;
+            color: #333;
+            margin: 15px 0 10px;
+        }
+        .product-item .tag {
+            font-size: 13px;
+            color: #888;
+            margin-bottom: 5px;
+        }
+        .product-item .price {
+            font-size: 18px;
+            color: #e4393c;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .product-item img {
+            width: 130px;
+            height: 130px;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+    <div class="guide-area">
+        <div class="guide-title">京东商品导购</div>
+        <div class="product-list">
+            <!-- 第1个 -->
+            <div class="product-item">
+                <h3>麦包包 Vinhas单肩包</h3>
+                <div class="tag">领券满减</div>
+                <div class="price">￥128</div>
+                <img src="F:\lk\img\image5-2-1.jpg" alt="单肩包">
+            </div>
+            <!-- 第2个 -->
+            <div class="product-item">
+                <h3>优购.adidas休闲鞋</h3>
+                <div class="tag">限时抢购</div>
+                <div class="price">￥365</div>
+                <img src="F:\lk\img\image5-2-2.jpg" alt="休闲鞋">
+            </div>
+            <!-- 第3个 -->
+            <div class="product-item">
+                <h3>优购.NB女子复古鞋</h3>
+                <div class="tag">限时抢购</div>
+                <div class="price">￥299</div>
+                <img src="F:\lk\img\image5-2-3.jpg" alt="复古鞋">
+            </div>
+            
+            <!-- 第4个 (修复了此处多余的闭合标签) -->
+            <div class="product-item">
+                <h3>优购.NB女子复古鞋</h3>
+                <div class="tag">限时抢购</div>
+                <div class="price">￥299</div>
+                <img src="F:\lk\img\image5-2-4.jpg" alt="复古鞋">
+            </div>
+            <!-- 第5个 -->
+            <div class="product-item">
+                <h3>优购.NB女子复古鞋</h3>
+                <div class="tag">限时抢购</div>
+                <div class="price">￥299</div>
+                <img src="F:\lk\img\image5-2-5.jpg" alt="复古鞋">
+            </div>
+            <!-- 第6个 -->
+            <div class="product-item">
+                <h3>优购.NB女子复古鞋</h3>
+                <div class="tag">限时抢购</div>
+                <div class="price">￥299</div>
+                <img src="F:\lk\img\image5-2-6.jpg" alt="复古鞋">
+            </div>
+        </div> <!-- 修复：product-list 必须在这里闭合 -->
+    </div>
+</body>
+</html>

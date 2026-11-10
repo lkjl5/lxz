@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>留言板</title>
+    <style>
+        body {
+            font-family: "Microsoft YaHei", sans-serif;
+            font-size: 13px;
+            color: #20d0e8;
+            background-color: #fff;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            width: 700px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .message {
+            background-color: #fff;
+            border: 1px solid #a0c6e5;
+            background-color: #fff;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px 5px;
+        }
+        .header h1 {
+            font-size: 24px;
+            color: #0033cc;
+            margin: 0;
+        }
+        .header a {
+            font-size: 13px;
+            color: #0033cc;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .divider {
+            border-top: 1px dashed #a0c6e5;
+            margin:0 20px 10px;
+        }
+        .form-area {
+            padding:  0 20px;
+        }
+        .form-title {
+            color: #e6b501;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .form-table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 1px solid #d0e6f5;
+        }
+          .form-table td {
+            padding: 8px;
+            vertical-align: middle;
+            border-bottom: 1px solid #eef5fb;
+        }
+        .form-table td:first-child {
+            width: 80px;
+            text-align: right;
+            color: #0ce40c; 
+            font-weight: bold;
+        }
+        input[type="text"], input[type="email"] {
+            border: 1px solid #7f9db9;
+            height: 20px;
+            padding: 2px 4px;
+        }
+        .input-short { width: 120px; }
+        .input-long { width: 350px; }
+         .radio-group {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            color: #666;
+        }
+         .radio-group label {
+            margin-right: 10px;
+        }
+         textarea {
+            width: 400px;
+            height: 80px;
+            border: 1px solid #7f9db9;
+            padding: 4px;
+            resize: vertical;
+        }
+          .notice {
+            color: #050504;
+            font-size: 12px;
+            margin-top: 10px;
+            line-height: 1.6;
+        }
+          .btn-group {
+            text-align: center;
+            margin: 15px 0;
+        }
+        .btn-group button {
+            padding: 3px 15px;
+            margin: 0 5px;
+            border: 1px solid #7f9db9;
+            background-color: #f0f0f0;
+            cursor: pointer;
+        }
+          .rules {
+            background-color: #f5fafe;
+            padding: 10px 20px 15px;
+            border-top: 1px solid #eef5fb;
+        }
+         .rules ul {
+            margin: 0;
+            padding-left: 20px;
+            color: #010101;
+            font-size: 12px;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>留言板</h1>
+            <a href="#">科技工作者建言</a>
+        </div>
+        <div class="divider"></div>
+         <div class="form-area">
+            <div class="form-title">发表留言</div>
+            <form action="#" method="post">
+                <table class="form-table">
+                    <tr>
+                        <td>姓 名：</td>
+                        <td><input type="text" class="input-short"></td>
+                    </tr>
+                     <tr>
+                        <td>电子邮件：</td>
+                        <td><input type="email" class="input-long"></td>
+            </tr>
+                    <tr>
+                        <td>分 类：</td>
+                        <td class="radio-group">
+                            <label><input type="radio" name="type" checked>科技工作者建言</label>
+                            <label><input type="radio" name="secret">不保密</label>
+                            <label><input type="radio" name="secret">保密</label>
+                            <span style="color: #05fd05; margin-left: 10px; margin-right: 5px;">留言类型：</span>
+                            <select>
+                                <option>建言献策</option>
+                                <option>问题反映</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>留 言：</td>
+                        <td><textarea></textarea></td>
+                    </tr>
+                </table>
+            </form>
+             <div class="notice">
+                注：如果您的留言不便公开，请选择“保密”选项，提交后可由系统反馈给您的留言编号，查询密码和您的姓名查询回复。
+            </div>
+            <div class="btn-group">
+                <button type="submit">提交</button>
+                <button type="reset">清空</button>
+            </div>
+        </div>
+        <div class="rules">
+            <ul>
+                <li>请遵守国家有关法律、法规，尊重网上道德，承担一切因您的行为而直接或间接引起的法律责任。</li>
+                <li>本网站拥有管理笔名和留言的一切权利。</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
