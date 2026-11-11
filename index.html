@@ -7,7 +7,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Noto+Sans+SC:wght@300;400;700&display=swap" rel="stylesheet">
     
     <style>
-        /* ================= 基础重置与配色变量 ================= */
         * {
             margin: 0;
             padding: 0;
@@ -15,13 +14,13 @@
         }
 
         :root {
-            --primary-color: #C0392B; /* 朱砂红 */
+            --primary-color: #C0392B; 
             --primary-hover: #A93226; 
-            --secondary-color: #2A9D8F; /* 青城绿 */
-            --bg-color: #FDFBF7; /* 宣纸米白 */
-            --bg-alt: #F4F1EA; /* 水墨灰 */
-            --text-color: #2C3E50; /* 墨黑 */
-            --text-light: #5D6D7E; /* 浅墨灰 */
+            --secondary-color: #2A9D8F; 
+            --bg-color: #FDFBF7; 
+            --bg-alt: #F4F1EA; 
+            --text-color: #2C3E50; 
+            --text-light: #5D6D7E;
         }
 
         body {
@@ -31,8 +30,6 @@
             line-height: 1.6;
             overflow-x: hidden;
         }
-
-        /* ================= 顶部导航 (淡黄色毛玻璃) ================= */
         .navbar {
             position: fixed;
             top: 0;
@@ -74,8 +71,6 @@
         .nav-links a:hover {
             color: var(--primary-color);
         }
-
-        /* ================= 首屏 (三栏布局：左文+中图+右文) ================= */
         .hero {
             width: 100%;
             min-height: 100vh;
@@ -85,7 +80,6 @@
             background-color: var(--bg-color);
             padding: 120px 50px 60px 50px; 
         }
-
         .hero-container {
             display: flex;
             align-items: center;
@@ -94,12 +88,10 @@
             width: 100%;
             gap: 40px;
         }
-
         .hero-text {
             flex: 1;
             animation: fadeInUp 1s ease-out both;
         }
-
         .hero-text h2 {
             font-family: 'Noto Serif SC', serif;
             font-size: 38px;
@@ -107,16 +99,13 @@
             margin-bottom: 20px;
             line-height: 1.3;
         }
-
         .hero-text p {
             color: var(--text-light);
             font-size: 16px;
             line-height: 1.8;
             margin-bottom: 20px;
-            text-align: justify; /* 两端对齐让长文更好看 */
+            text-align: justify; 
         }
-
-        /* 中间图片样式 */
         .hero-image {
             flex: 1.5;
             border-radius: 20px;
@@ -137,8 +126,6 @@
         .hero-image:hover img {
             transform: scale(1.03);
         }
-
-        /* ================= 通用内容区 ================= */
         .section {
             padding: 100px 50px;
             max-width: 1200px;
@@ -163,8 +150,6 @@
             margin: 15px auto 0;
             border-radius: 2px;
         }
-
-        /* ================= 卡片网格布局 ================= */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -229,8 +214,6 @@
             font-size: 13px;
             font-weight: 700;
         }
-
-        /* ================= 左右交错图文布局 ================= */
         .split-layout {
             display: flex;
             align-items: center;
@@ -280,8 +263,6 @@
             margin-bottom: 15px;
             text-align: justify;
         }
-
-        /* ================= 时间轴 (行程推荐) ================= */
         .timeline {
             position: relative;
             max-width: 800px;
@@ -345,8 +326,6 @@
             color: var(--text-light);
             font-size: 15px;
         }
-
-        /* ================= 页脚 ================= */
         footer {
             background-color: #2C3E50;
             color: #AEB6BF;
@@ -355,14 +334,10 @@
             margin-top: 50px;
             font-size: 14px;
         }
-
-        /* ================= 动画 ================= */
         @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
         }
-
-        /* ================= 响应式适配 (手机端) ================= */
         @media (max-width: 900px) {
             .navbar { padding: 0 20px; }
             .nav-links { display: none; }
@@ -379,8 +354,6 @@
     </style>
 </head>
 <body>
-
-    <!-- 顶部导航 -->
     <nav class="navbar">
         <div class="logo">成都 · CHENGDU</div>
         <div class="nav-links">
@@ -390,8 +363,6 @@
             <a href="#itinerary">行程推荐</a>
         </div>
     </nav>
-
-    <!-- 首屏：左文 + 中图 + 右文 (长文案版) -->
     <header class="hero" id="home">
         <div class="hero-container">
             <!-- 左侧文案 -->
@@ -400,13 +371,9 @@
                 <p>成都，这座拥有三千余年建城史的古都，是古蜀文明的发祥地。漫步在宽窄巷子，青砖黛瓦间透着岁月的痕迹；走进武侯祠，仿佛还能听见三国时期的金戈铁马。这里不仅有憨态可掬的国宝大熊猫，更有深邃厚重的历史底蕴。</p>
                 <p>同时，这里也是美食的江湖。从滚烫红亮的麻辣火锅，到软糯香甜的三大炮，再到街角巷尾的串串香与冒菜，市井的烟火气总能在一瞬间征服你的味蕾，让你流连忘返。</p>
             </div>
-            
-            <!-- 中间图片 -->
             <div class="hero-image">
                 <img src="https://ts1.tc.mm.bing.net/th/id/OIP-C.CGe712KMM0c4opohpSVCtAHaE-?w=193&h=135&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=ImgAns&rm=2" alt="成都大熊猫">
             </div>
-
-            <!-- 右侧文案 -->
             <div class="hero-text">
                 <h2>安逸慢活<br>烟火人间</h2>
                 <p>泡一碗盖碗茶，听一曲悠扬的川剧，在人民公园的竹椅上体验地道的采耳，摆一摆那永远也摆不完的龙门阵。在玉林路的尽头感受小酒馆的文艺气息，在春熙路和太古里的繁华中体验现代都市的脉搏。</p>
@@ -414,8 +381,6 @@
             </div>
         </div>
     </header>
-
-    <!-- 1. 必去景点 -->
     <section class="section" id="attractions">
         <h2 class="section-title">必去地标</h2>
         <div class="grid">
@@ -445,8 +410,6 @@
             </div>
         </div>
     </section>
-
-    <!-- 2. 美食文化 -->
     <section class="section" id="food" style="background-color: var(--bg-alt); border-radius: 30px;">
         <h2 class="section-title">舌尖上的成都</h2>
         <div class="grid">
@@ -468,8 +431,6 @@
             </div>
         </div>
     </section>
-
-    <!-- 3. 安逸慢生活 -->
     <section class="section" id="culture">
         <h2 class="section-title">安逸成都 · 慢生活</h2>
         
@@ -495,8 +456,6 @@
             </div>
         </div>
     </section>
-
-    <!-- 4. 经典行程推荐 -->
     <section class="section" id="itinerary" style="background-color: var(--bg-alt); border-radius: 30px;">
         <h2 class="section-title">经典 3 天 2 夜路线</h2>
         <div class="timeline">
@@ -523,8 +482,6 @@
             </div>
         </div>
     </section>
-
-    <!-- 页脚 -->
     <footer>
         <p>© 2026 成都文旅宣传概念页 | Designed with AI</p>
     </footer>
